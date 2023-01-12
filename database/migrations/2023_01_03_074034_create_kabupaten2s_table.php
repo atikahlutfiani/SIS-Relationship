@@ -15,6 +15,9 @@ class CreateKabupaten2sTable extends Migration
     {
         Schema::create('kabupaten2s', function (Blueprint $table) {
             $table->id();
+            $table->integer('kode');
+            $table->string('nama');
+            $table->string('ibukota');
             $table->timestamps();
         });
     }
