@@ -16,6 +16,7 @@ class CreateVillagesTables extends Migration
     {
         Schema::create('villages', function(Blueprint $table){
             $table->id('No');
+            $table->foreign('user_id')->references('id')->on('perdagangan1s')->onUpdate('cascade')->onDelete('restrict');
             $table->char('id', 10)->index();
             $table->char('district_id', 7);
             $table->string('name', 50);

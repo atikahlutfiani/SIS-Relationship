@@ -15,6 +15,7 @@ class CreateKecamatan2sTable extends Migration
     {
         Schema::create('kecamatan2s', function (Blueprint $table) {
             $table->id();
+            $table->foreign('user_id')->references('id')->on('perdagangan2s')->onUpdate('cascade')->onDelete('restrict');
             $table->integer('kode');
             $table->string('nama');
             $table->string('ibukota');

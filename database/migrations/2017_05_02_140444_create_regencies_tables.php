@@ -16,6 +16,7 @@ class CreateRegenciesTables extends Migration
     {
         Schema::create('regencies', function(Blueprint $table){
             $table->id('No');
+            $table->foreign('user_id')->references('id')->on('perdagangan1s')->onUpdate('cascade')->onDelete('restrict');            ;
             $table->char('id', 4)->index();
             $table->char('province_id', 2);
             $table->string('name', 50);

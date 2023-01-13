@@ -16,6 +16,7 @@ class CreateDistrictsTables extends Migration
     {
         Schema::create('districts', function(Blueprint $table){
             $table->id('No');
+            $table->foreign('user_id')->references('id')->on('perdagangan1s')->onUpdate('cascade')->onDelete('restrict');            ;
             $table->char('id', 7)->index();
             $table->char('regency_id', 4);
             $table->string('name', 50);

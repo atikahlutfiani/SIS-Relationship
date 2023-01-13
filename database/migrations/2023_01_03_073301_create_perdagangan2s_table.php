@@ -15,6 +15,7 @@ class CreatePerdagangan2sTable extends Migration
     {
         Schema::create('perdagangan2s', function (Blueprint $table) {
             $table->id();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
             $table->integer('jam');
             $table->string('ket');
             $table->integer('jml_Rp');
