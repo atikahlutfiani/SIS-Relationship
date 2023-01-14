@@ -15,6 +15,10 @@ class CreateKecamatan2sTable extends Migration
     {
         Schema::create('kecamatan2s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->contrained('perdagangan2s' ,'id');
+            $table->integer('kode');
+            $table->string('nama');
+            $table->string('ibukota');
             $table->timestamps();
         });
     }

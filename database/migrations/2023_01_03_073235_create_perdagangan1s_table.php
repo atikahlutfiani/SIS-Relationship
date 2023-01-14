@@ -15,6 +15,7 @@ class CreatePerdagangan1sTable extends Migration
     {
         Schema::create('perdagangan1s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->contrained('users' ,'id');
             $table->integer('jam');
             $table->string('ket');
             $table->integer('jml_Rp');

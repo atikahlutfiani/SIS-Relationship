@@ -15,6 +15,10 @@ class CreatePerdagangan2sTable extends Migration
     {
         Schema::create('perdagangan2s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->contrained('users' ,'id');
+            $table->integer('jam');
+            $table->string('ket');
+            $table->integer('jml_Rp');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateProvinsi2sTable extends Migration
     {
         Schema::create('provinsi2s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->contrained('perdagangan2s' ,'id');
+            $table->integer('kode');
+            $table->string('nama');
+            $table->string('ibukota');
             $table->timestamps();
         });
     }
