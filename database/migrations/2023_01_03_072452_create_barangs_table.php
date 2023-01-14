@@ -15,7 +15,7 @@ class CreateBarangsTable extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('user_id')->contrained('users' ,'id');
             $table->string('jenis');
             $table->string('name');
             $table->timestamps();

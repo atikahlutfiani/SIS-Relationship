@@ -15,7 +15,7 @@ class CreateProvincesTables extends Migration
     {
         Schema::create('provinces', function(Blueprint $table){
             $table->id('No');
-            $table->foreign('user_id')->references('id')->on('perdagangan1s')->onUpdate('cascade')->onDelete('restrict');            ;
+            $table->foreignId('user_id')->contrained('perdagangan1s' ,'id');
             $table->char('id', 2)->index();
             $table->string('name');
         });
